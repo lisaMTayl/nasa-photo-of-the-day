@@ -8,10 +8,10 @@ export default function SpaceContainer({ limit }) {
 
   useEffect(() => {
     axios
-      .get("https://api.nasa.gov/planetary/apod?api_key=IpSWIoboMnzGCH5JDIFqiGhn16zuwo4kIaBJnHgi")
+      .get("https://api.nasa.gov/planetary/apod?api_key=IpSWIoboMnzGCH5JDIFqiGhn16zuwo4kIaBJnHgi&date=2019-07-15")
       .then(response => {
-        const SpaceData = response.data;
-        console.log('photo api:', data);
+        const SpaceData = response.data.url;
+        console.log('photo api:', SpaceData);
 
 
       })
@@ -21,6 +21,6 @@ export default function SpaceContainer({ limit }) {
   }, []);
 
 
-    return <SpaceCard/>;
+    return <SpaceCard />;
 
 }
