@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "./Card"
+import PhotoCard from "./components/PhotoCard"
 import "./App.css";
 
 
@@ -32,7 +32,7 @@ return (
       Explore Space with NASA
     </h1>
     {data
-      ? <Card title={data.title}
+      ? <PhotoCard title={data.title}
                    url={data.url}
                    explanation={data.explanation}
                    date={data.date}

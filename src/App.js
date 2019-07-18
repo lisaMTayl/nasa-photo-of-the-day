@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "../src/Card";
 import "./App.css";
+import PhotoCard from "./components/PhotoCard";
+
+
 
 
 
@@ -30,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <h1>Explore Space With NASA</h1>
-      <Card title={data.title}
+      <PhotoCard title={data.title}
                 url={data.url}
                 explanation={data.explanation}
                 date={data.date}
