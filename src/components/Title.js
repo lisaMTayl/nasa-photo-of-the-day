@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Title ({ Title }) {
+export default function Title (props) {
 
-  return <div>{Title}</div>
+  return <h3>{props.title}</h3>
 
 };
 

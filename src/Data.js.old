@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Title from "./components/Title.js";
-import Url from "./components/Url.js";
+import Photo from "./components/Urls";
 import Explanation from "./components/Explanation.js";
 import Date from "./components/Date.js";
 import Copyright from "./components/Copyright.js";
@@ -30,7 +30,7 @@ export default function Data({ limit }) {
   return <div className="dataWrapper">
     <h3><Title title={data.title} /></h3>
     <img src={data.url} alt={data.title} />
-    <p><Url />
+    <p><Photo />
     <p><Explanation explanation={data.explanation}/> </p>
 
   </div> ;

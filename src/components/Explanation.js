@@ -1,8 +1,10 @@
 import React from "react";
 
-export default function Explanation ({ Explanation }) {
+export default function Explanation (props) {
 
-  return <div>{Explanation}</div>
+  return <div>
+    <p>{props.explanation}</p>
+  </div>
 
 };
 

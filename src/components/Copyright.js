@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Copyright ({ Copyright })  {
+export default function Copyright (props)  {
 
-  return <div>{Copyright}</div>
+  return <div><p>{props.copyright}</p></div>
 
 };
 
