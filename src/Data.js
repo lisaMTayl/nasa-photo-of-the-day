@@ -5,17 +5,12 @@ import Url from "./components/Url";
 import Explanation from "./components/Explanation";
 import Date from "./components/Date";
 import Copyright from "./components/Copyright";
+import Photo from "./components/Photo";
 
 
 
 
-function Data({ limit }) {
-  const [data, setData] = useState([]);
-  const [title, setTitle] = useState([]);
-  const [explanation, setExplanation] = useState([]);
-  const [date, setDate] = useState([]);
-  const [copyright, setCopyright] = useState([]);
-
+export default function Data() {
 
   useEffect(() => {
     axios
@@ -36,11 +31,10 @@ function Data({ limit }) {
 
   return <div className="dataWrapper">
     <h3><Title title="data.title" /></h3>
-    <img src={Url} alt={Title} />
-    <p><Url /></p>
-    <p><Explanation /> </p>
-    <h4><Date /></h4>
-    <h5><Copyright/></h5>
+    <Photo photo="data.url" src="data.url" alt="data.title" />
+    <p><Url url="data.url" /></p>
+    <p><Explanation explanation="data.explanation" /> </p>
+    <h4><Date date="data.date"/></h4>
+    <h5><Copyright copyright="data.copyright"/></h5>
   </div>
-  console.log({ title });
 };

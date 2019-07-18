@@ -1,22 +1,17 @@
-import React from "react";
-import Title from "./components/Title";
-import Url from "./components/Url";
+//App.js
+import React, { Component } from "react";
+import DateInput from "./components/DateInput";
+import Photo from "./components/Photo.js";
 import Explanation from "./components/Explanation";
-import Date from "./components/Date";
-import Copyright from "./components/Copyright";
 
+export default function App() {
 
-import "./App.css";
+    return (
+      <div className="App">
+        <h1>NASA's Astronomy Picture of the Day</h1>
+        <Data />
+        <Photo />
+      </div>
+    );
 
-function App() {
-  console.log(<Title />);
-  return (
-    <div className = "container">
-
-    </div>
-
-  );
 }
-
-export default App;
-
