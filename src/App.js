@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 import PhotoCard from "./components/PhotoCard";
+import Container from '@material-ui/core/Container';
 
 
 
@@ -30,7 +31,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <Container className="App" maxWidth="md">
       <h1>Explore Space With NASA</h1>
       <PhotoCard title={data.title}
                 url={data.url}
@@ -38,7 +39,7 @@ function App() {
                 date={data.date}
                 copyright={data.copyright}/>
 
-    </div>
+    </Container>
   );
 }
 
