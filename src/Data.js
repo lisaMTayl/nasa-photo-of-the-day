@@ -1,25 +1,21 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import PhotoCard from "./components/PhotoCard"
 import "./App.css";
-import PhotoCard from "./components/PhotoCard";
-import Container from '@material-ui/core/Container';
 
 
-
-
-
-function App() {
+export default function App() {
   const [data, setData] = useState({});
   useEffect(() => {
     axios
       .get("https://api.nasa.gov/planetary/apod?api_key=IpSWIoboMnzGCH5JDIFqiGhn16zuwo4kIaBJnHgi&date=2019-07-15")
       .then(res => {
+        // receive data
+        setData(res.data);
         // data receipt successful
         console.log(res.data);
         console.log(setData);
-        // receive data
-        setData(res.data);
-
 
       })
       .catch(error => {
@@ -30,17 +26,18 @@ function App() {
 
 
 
-  return (
-    <Container className="App" maxWidth="md">
-      <h1>Explore Space With NASA</h1>
-      <PhotoCard title={data.title}
-                url={data.url}
-                explanation={data.explanation}
-                date={data.date}
-                copyright={data.copyright}/>
-
-    </Container>
-  );
+return (
+  <div className="App">
+    <h1>
+      Explore Space with NASA
+    </h1>
+    {data
+      ? <PhotoCard title={data.title}
+                   url={data.url}
+                   explanation={data.explanation}
+                   date={data.date}
+                   copyright={data.copyright}/>
+      : <div>Loading</div>}
+  </div>
+);
 }
-
-export default App

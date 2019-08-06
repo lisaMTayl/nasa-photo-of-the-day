@@ -1,0 +1,38 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+import Title from "./components/Title.js";
+import Photo from "./components/Urls";
+import Explanation from "./components/Explanation.js";
+import Date from "./components/Date.js";
+import Copyright from "./components/Copyright.js";
+
+
+export default function Data({ limit }) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://api.nasa.gov/planetary/apod?api_key=IpSWIoboMnzGCH5JDIFqiGhn16zuwo4kIaBJnHgi&date=2019-07-15")
+      .then(response => {
+        // receive data
+        setData(response.data);
+        // data receipt successful
+        console.log('data received: ', data);
+      })
+      .catch(error => {
+        // data receipt failure
+        console.log(error, "Error receiving data");
+      })
+  }, []);
+
+
+  return <div className="dataWrapper">
+    <h3><Title title={data.title} /></h3>
+    <img src={data.url} alt={data.title} />
+    <p><Photo />
+    <p><Explanation explanation={data.explanation}/> </p>
+
+  </div> ;
+
+}
